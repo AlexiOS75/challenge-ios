@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     }
 
     func viewModelDidSet() {
+        viewModel?.registerCells(for: tableView)
         title = viewModel?.title
         viewModel?.getData(onSuccess: { [weak self] tableViewData in
             DispatchQueue.main.async {
@@ -46,7 +47,6 @@ class MainViewController: UIViewController {
 
 private extension MainViewController {
     func setupTableView() {
-        tableView.register(BankCell.self, forCellReuseIdentifier: "BankCell")
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self

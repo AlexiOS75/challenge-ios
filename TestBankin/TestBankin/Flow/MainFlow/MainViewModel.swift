@@ -41,6 +41,10 @@ class MainViewModel: TableViewModelInterface {
 }
 
 extension MainViewModel {
+    func registerCells(for tableView: UITableView) {
+        tableView.register(BankCell.self, forCellReuseIdentifier: "BankCell")
+    }
+    
     func setup(cell: UITableViewCell, with type: TableViewCellType) {
         switch type {
             case .bankCell(let viewModel): (cell as? BankCell)?.setup(with: viewModel)

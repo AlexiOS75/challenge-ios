@@ -15,6 +15,7 @@ protocol TableViewModelInterface {
 
     func getData(onSuccess: @escaping (TableViewData) -> (), onError: @escaping (String) -> ())
     func setup(cell: UITableViewCell, with type: TableViewCellType)
+    func registerCells(for tableView: UITableView)
 }
 
 enum TableViewCellType {
