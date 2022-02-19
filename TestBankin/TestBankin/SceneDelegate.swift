@@ -20,14 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
 
-
-
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
 
         applicationCoordinator = ApplicationCoordinator(with: window!)
-
         applicationCoordinator?.start()
     }
 

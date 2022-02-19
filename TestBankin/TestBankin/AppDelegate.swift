@@ -17,19 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        let mainController = MainViewController()
-        mainController.viewModel = MainViewModel(with: MainViewModelInput(service: Service()))
-        let vc = UIViewController()
-        vc.view.backgroundColor = .white
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
-
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
 
         applicationCoordinator = ApplicationCoordinator(with: window!)
-
         applicationCoordinator?.start()
         return true
     }
